@@ -42,33 +42,9 @@
   margin-left: 10px;
 }
 
-
-
-/* ===== Background Change to Navy Blue ===== */
-
-/* body {
-  background-color: #0a192f;
-}
-
-.hero {
-  background-color: #0a192f !important;
-}
-
-.overlay {
-  background: rgba(10, 25, 47, 0.8) !important;
-}
-
-.navbar {
-  background-color: #0a192f !important;
-} */
-
-
-/* here finish the code */
-
-
+/* Skills */
 
 .skill-mf .progress {
-  /* background-color: #cde1f8; */
   margin: .5rem 0 1.2rem 0;
   border-radius: 0;
   height: .7rem;
@@ -76,16 +52,18 @@
 
 .skill-mf .progress .progress-bar {
   height: .7rem;
-  background-color: #ffbd39;
+  background: linear-gradient(to right, #ff2e63, #00bfff);
 }
 
+/* Typing Animation */
 
-/* Animation styles */
 #typing-animation {
   position: relative;
   font-size: 30px;
   font-weight: bold;
-  color: rgb(255, 255, 255);
+  background: linear-gradient(90deg, #ff2e63, #00bfff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   overflow: hidden;
   white-space: nowrap;
   animation: typing 3s steps(20, end) infinite;
@@ -93,7 +71,6 @@
 
 #typing-animation:before {
   content: "";
-  /* position: absolute; */
   top: 0;
   left: 0;
   width: 0;
@@ -103,25 +80,16 @@
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
+  from { width: 5px; }
+  to { width: 0; }
 }
 
-
-/* project image zoom effect */
+/* Zoom Effect */
 
 .zoom-effect {
   overflow: hidden;
@@ -132,34 +100,174 @@
   transform: scale(1.1);
 }
 
+/* ===== Premium Theme ===== */
 
-.zoom-effect:hover {
-  transform: scale(1.1);
-}
-
-/* ===== Background Change to Navy Blue ===== */
 body {
-  background-color: #0a192f;
+  background: linear-gradient(to right, #020617, #0a192f);
+  color: #e2e8f0;   /* improved readability */
 }
 
-.hero {
-  background-color: #0a192f !important;
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
 }
 
-.overlay {
-  background: rgba(10, 25, 47, 0.8) !important;
-}
+/* Navbar */
 
 .navbar {
-  background-color: #0a192f !important;
+  background-color: #020617 !important;
 }
 
+.navbar-nav .nav-link {
+  position: relative;
+  transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #00bfff !important;
+}
+
+/* Active underline effect */
+.navbar-nav .nav-link.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #00bfff;
+  left: 0;
+  bottom: -5px;
+}
+
+/* Hero Section */
+
+.hero {
+  background: linear-gradient(to right, #020617, #0a192f) !important;
+}
+
+/* Overlay */
+
+.overlay {
+  background: rgba(10, 25, 47, 0.7) !important;
+}
+
+/* ===== MULTICOLOR HEADINGS ===== */
+
+h1, h2, h3, h2 span {
+  background: linear-gradient(90deg, #ff2e63, #00bfff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+
+.btn-primary {
+  background: linear-gradient(90deg, #ff2e63, #00bfff);
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #00bfff, #00ff88);
+}
+
+/* Links */
+
+a {
+  color: #00bfff;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #ff2e63;
+}
+
+/* Cards / Sections */
+
+.resume-wrap, .box {
+  background-color: #020617;
+  border-radius: 10px;
+}
+
+/* Section Highlight */
+
+section:target {
+  animation: highlight 1s ease;
+}
+
+@keyframes highlight {
+  from {
+    background-color: rgba(255, 46, 99, 0.2);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+/* ===== CERTIFICATE SLIDER ===== */
+
+.slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(250px * 22);
+  animation: scroll 25s linear infinite;
+}
+
+.slider:hover .slide-track {
+  animation-play-state: paused;
+}
+
+.slide {
+  width: 250px;
+  height: 170px;
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #020617;
+  transition: 0.3s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00bfff;
+}
+
+/* Animation */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+.btn-primary {
+  background: linear-gradient(90deg, #ff2e63, #00bfff) !important;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,191,255,0.4);
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #00bfff, #00ff88) !important;
+  transform: scale(1.05);
+}
 </style>
 
-
   </head>
-	
-</body>	
+	</body>	
+
+
+
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
 	  
@@ -176,7 +284,7 @@ body {
 	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
 	          <!-- <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li> -->
-			  <li class="nav-item"><a href="#Blogs-section" class="nav-link"><span>Blogs</span></a></li>
+			  <!-- <li class="nav-item"><a href="#Blogs-section" class="nav-link"><span>Blogs</span></a></li> -->
 			  <li class="nav-item"><a href="#Certifications-section" class="nav-link"><span>Certifications</span></a></li>
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 	        </ul>
@@ -238,7 +346,7 @@ body {
 			            <h2>software Engineer</h2>
 						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
 						<!-- <br> -->
-			            <p><a href="https://medium.com/@priyanshuvishwakarma3133" class="btn btn-primary py-3 px-4">Blogs</a> 
+			            <!-- <p><a href="https://medium.com/@priyanshuvishwakarma3133" class="btn btn-primary py-3 px-4">Blogs</a>  -->
 							<a href="https://github.com/priyanshu786-72" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
 		            </div>
 		          </div>
@@ -262,8 +370,11 @@ body {
 								<div class="row">
 									<div class="col-sm-6 col-md-5">
 									  <div class="about-img">
-										<img src="https://media.licdn.com/dms/image/v2/D4E03AQHKQyU0zUUbfg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732081934472?e=1756339200&v=beta&t=2fsfhT2re0IsOp0EwhrP5KrW03zQyFDgf954vHYkNcg" class="img-fluid rounded b-shadow-a" alt="">
-									  </div>
+										<div class="about-img">
+ 										 <img src="profile.jpg" class="img-fluid rounded b-shadow-a" alt="Profile Photo">
+											</div>
+								
+									</div>
 									</div>
 									<!-- Details next to profile image -->
 									<div class="col-sm-6 col-md-7">
@@ -452,11 +563,31 @@ I’m a continuous learner, always exploring new technologies and best practices
 				</div>
     		</div>
 
+
+
+
     		<div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="Priyanshu_Vishwakarma_Resume.pdf" class="btn btn-primary py-4 px-5">Download CV</a></p>
-    			</div>
-    		</div>
+				<div class="col-md-6 text-center ftco-animate">
+
+    
+    <!-- Download Button -->
+    <p>
+      <a href="PRIYANSHU_RESUME (1).pdf" class="btn btn-primary py-4 px-5" target="_blank">
+        Download CV
+      </a>
+    </p>
+
+    <!-- Resume Image Preview -->
+    <div class="resume-preview mt-4">
+      <img src="resume.png" alt="Resume Preview">
+    </div>
+
+  </div>
+</div>
+
+
+
+
     	</div>
     </section>
 	<br>
@@ -467,15 +598,15 @@ I’m a continuous learner, always exploring new technologies and best practices
 	</div>
 
 	
-			  <div class="col-md-4 d-flex ftco-animate">
+			  <!-- <div class="col-md-4 d-flex ftco-animate">
 				  <div class="blog-entry justify-content-end">
 				  <a href="https://medium.com/@priyanshuvishwakarma3133" class="block-20 zoom-effect" >
 				  </a>
 				  <div class="text mt-3 float-right d-block">
 	
-					<!-- <h3 class="heading"><a href="https://medium.com/@priyanshuvishwakarma3133">The A/B testing Bible.</a></h3>
-					<p>Understanding the intuition behind A/B testing from a technical, statistical, business and analytics point of view</p> -->
-				  </div>
+					 <h3 class="heading"><a href="https://medium.com/@priyanshuvishwakarma3133">The A/B testing Bible.</a></h3>
+					<p>Understanding the intuition behind A/B testing from a technical, statistical, business and analytics point of view</p> 
+				  </div> 
 				</div>
 			  </div>
 		   </div>
@@ -490,26 +621,161 @@ I’m a continuous learner, always exploring new technologies and best practices
 
 	 
 			</div>-->
+
 			 <div class="col-md-4 d-flex ftco-animate"> -->
 				<div class="blog-entry justify-content-end">
 				<a href="https://leetcode.com/studyplan/leetcode-75//" class="block-20 zoom-effect" >
 				</a>
 				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://leetcode.com/studyplan/leetcode-75/">Build logic</a></h3>
-				  <p>Issuer - 75 day DSA challenge</p>
-				  <p>DSA</p>
 				</div>
 			  </div>
 			</div>  
 			 
-		<div class="row justify-content-center">
-			<div class="col-md-7 ftco-animate text-center">
-				<h2> <a href="https://www.linkedin.com/in/priyanshu-vishwakarma-a54955304//" class="btn btn-primary py-3 px-5">More Certifications</a> </h2>
-			</div>
-		</div>
+	<div class="row justify-content-center">
+  <div class="col-md-7 ftco-animate text-center">
+    
+    <h2>More Certifications</h2>
+
+    <a href="https://www.linkedin.com/in/priyanshu-vishwakarma-a54955304/" 
+       class="btn btn-primary py-3 px-5 mt-3">
+       View Certifications
+    </a>
+
+  </div>
+</div>
 
 	  </section>
+
+
+
+
+
+
+
+ <style>
+
+
+/* ===== CERTIFICATE SLIDER (FIXED AREA) ===== */
+
+.slider {
+  width: 100%;
+  max-width: 900px;
+  height: 200px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  border: 2px solid #0a192f;
+}
+
+/* Fade effect (premium look) */
+.slider::before,
+.slider::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  z-index: 2;
+}
+
+.slider::before {
+  left: 0;
+  background: linear-gradient(to right, #020617, transparent);
+}
+
+.slider::after {
+  right: 0;
+  background: linear-gradient(to left, #020617, transparent);
+}
+
+/* Moving track */
+.slide-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+/* Pause on hover */
+.slider:hover .slide-track {
+  animation-play-state: paused;
+}
+
+/* Each certificate box */
+.slide {
+  width: 250px;
+  height: 180px;
+  margin: 10px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #020617;
+  transition: 0.3s;
+}
+
+/* Image styling */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Hover effect */
+.slide:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00bfff;
+}
+
+/* Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+</style>
+
+<section id="certifications" class="container mt-5">
+  <h2 class="text-center mb-4">My Certifications</h2>
+
+  <div class="slider">
+    <div class="slide-track">
+
+
+
+      <!-- Repeat images for smooth infinite loop -->
+
+      <div class="slide"><img src="certification/apply_AI.png"></div>
+      <div class="slide"><img src="certification/aws.png"></div>
+      <div class="slide"><img src="certification/cisco_ai.png"></div>
+      <div class="slide"><img src="certification/cisco.png"></div>
+      <div class="slide"><img src="certification/deloite_data.png"></div>
+      <div class="slide"><img src="certification/deloite_tech.png"></div>
+      <div class="slide"><img src="certification/modern_AI.png"></div>
+      <div class="slide"><img src="certification/NPTL.png"></div>
+      <div class="slide"><img src="certification/python_2.png"></div>
+      <div class="slide"><img src="certification/python.png"></div>
+      <div class="slide"><img src="certification/TATA.png"></div>
+
+      <!-- duplicate for infinite effect -->
+      <div class="slide"><img src="certification/apply_AI.png"></div>
+      <div class="slide"><img src="certification/aws.png"></div>
+      <div class="slide"><img src="certification/cisco_ai.png"></div>
+      <div class="slide"><img src="certification/cisco.png"></div>
+
+    </div>
+  </div>
+</section>
+    </div>
+
+  </div>
+</section>
+
+<!-- finish -->
+
 
 
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
